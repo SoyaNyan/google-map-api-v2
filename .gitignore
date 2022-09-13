@@ -1,0 +1,15 @@
+# config
+config/
+
+# node
+node_modules/
+
+# lock files
+package-lock.json
+yarn.lock
+
+# logs
+logs/
+
+# build
+dist/
