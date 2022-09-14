@@ -7,6 +7,10 @@ import swaggerUi from 'swagger-ui-express'
 // import swaggerOutput from './swagger/swagger-output.json' assert { type: 'json' }
 const swaggerOutput = JSON.parse(readFileSync('swagger/swagger-output.json').toString())
 
+// swagger theme
+import { SwaggerTheme } from 'swagger-themes'
+const theme = new SwaggerTheme('v3')
+
 // logger
 import logger from '../winston/winston.js'
 
@@ -25,7 +29,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // swagger router
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOutput))
+app.use(
+	'/api-docs',
+	swaggerUi.serve,
+	swaggerUi.setup(swaggerOutput, { customCss: theme.getBuffer('dark') })
+)
 
 // api router
 app.use('/api', apiRouter)
