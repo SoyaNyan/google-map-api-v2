@@ -15,7 +15,7 @@ const theme = new SwaggerTheme('v3')
 import logger from '../winston/winston.js'
 
 // routes
-import apiRouter from './routes/apiRouter.js'
+import apiRouter from './routes/apiRouter'
 
 // get config
 import * as config from './config/config'

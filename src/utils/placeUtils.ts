@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer'
 import axios from 'axios'
 
 // utilities
-import { formatOpeningHours, OpeningHourType } from './timeUtils.js'
+import { formatOpeningHours, OpeningHourType } from './timeUtils'
 
 // get config
 import * as config from '../config/config'
