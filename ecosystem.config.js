@@ -1,6 +1,6 @@
-export const apps = [
+module.exports = [
 	{
 		name: 'google-map-api-v2',
-		script: 'dist/app.js',
+		script: 'dist/src/app.js',
 	},
 ]
