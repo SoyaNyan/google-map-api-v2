@@ -75,6 +75,7 @@ const getPlaceInfo = async (placeId: string): Promise<PlaceInfoType> => {
 		'opening_hours',
 		'place_id',
 		'rating',
+		'website',
 	]
 
 	// axios request config

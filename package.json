@@ -32,6 +32,7 @@
 		"swagger-autogen": "^2.21.6",
 		"swagger-themes": "^1.2.22",
 		"swagger-ui-express": "^4.5.0",
+		"ts-node": "^10.9.1",
 		"tsc-watch": "^5.0.3",
 		"typescript": "^4.8.3"
 	}
