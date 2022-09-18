@@ -17,7 +17,13 @@
 					{
 						"name": "url",
 						"in": "query",
-						"type": "string"
+						"type": "string",
+						"required": true
+					},
+					{
+						"name": "cache",
+						"in": "query",
+						"type": "boolean"
 					}
 				],
 				"responses": {
@@ -38,7 +44,13 @@
 					{
 						"name": "place_id",
 						"in": "query",
-						"type": "string"
+						"type": "string",
+						"required": true
+					},
+					{
+						"name": "cache",
+						"in": "query",
+						"type": "boolean"
 					}
 				],
 				"responses": {
@@ -59,7 +71,13 @@
 					{
 						"name": "url",
 						"in": "query",
-						"type": "string"
+						"type": "string",
+						"required": true
+					},
+					{
+						"name": "cache",
+						"in": "query",
+						"type": "boolean"
 					}
 				],
 				"responses": {

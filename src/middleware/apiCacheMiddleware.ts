@@ -16,7 +16,10 @@ const checkPlaceIdChace = async (
 	next: NextFunction
 ): Promise<void> => {
 	// get queries
-	const { url } = req.query
+	const { url, cache } = req.query
+
+	// check no cache option
+	if (cache === 'false') next()
 
 	// check url exists
 	if (typeof url !== 'string') {
@@ -65,7 +68,10 @@ const checkPlaceInfoChace = async (
 	next: NextFunction
 ): Promise<void> => {
 	// get queries
-	const { place_id } = req.query
+	const { place_id, cache } = req.query
+
+	// check no cache option
+	if (cache === 'false') next()
 
 	// check placeId
 	if (!place_id) {
@@ -102,7 +108,10 @@ const checkPlaceDataChace = async (
 	next: NextFunction
 ): Promise<void> => {
 	// get queries
-	const { url } = req.query
+	const { url, cache } = req.query
+
+	// check no cache option
+	if (cache === 'false') next()
 
 	// decode url
 	const decodedUrl = decodeURI(url as string)
