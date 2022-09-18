@@ -207,7 +207,7 @@ const getPlaceData = async (url: string): Promise<FormattedPlaceDataType | boole
 			'영업 중': 'OPEN',
 			'24시간 영업': 'OPEN_24H',
 			'금일 휴업': 'CLOSED',
-			'입시 휴업': 'CLOSED_TMP',
+			'임시 휴업': 'CLOSED_TMP',
 			'폐업': 'CLOSED_PERM',
 		}
 		const businessStatusElem = document.querySelector('.ZDu9vd > span:nth-child(1) > span')
