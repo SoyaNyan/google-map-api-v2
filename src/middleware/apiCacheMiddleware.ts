@@ -19,7 +19,10 @@ const checkPlaceIdChace = async (
 	const { url, cache } = req.query
 
 	// check no cache option
-	if (cache === 'false') next()
+	if (cache === 'false') {
+		next()
+		return
+	}
 
 	// check url exists
 	if (typeof url !== 'string') {
@@ -71,7 +74,10 @@ const checkPlaceInfoChace = async (
 	const { place_id, cache } = req.query
 
 	// check no cache option
-	if (cache === 'false') next()
+	if (cache === 'false') {
+		next()
+		return
+	}
 
 	// check placeId
 	if (!place_id) {
@@ -111,7 +117,10 @@ const checkPlaceDataChace = async (
 	const { url, cache } = req.query
 
 	// check no cache option
-	if (cache === 'false') next()
+	if (cache === 'false') {
+		next()
+		return
+	}
 
 	// decode url
 	const decodedUrl = decodeURI(url as string)

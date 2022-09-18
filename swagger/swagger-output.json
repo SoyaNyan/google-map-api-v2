@@ -23,7 +23,8 @@
 					{
 						"name": "cache",
 						"in": "query",
-						"type": "boolean"
+						"type": "boolean",
+						"default": true
 					}
 				],
 				"responses": {
@@ -50,7 +51,8 @@
 					{
 						"name": "cache",
 						"in": "query",
-						"type": "boolean"
+						"type": "boolean",
+						"default": true
 					}
 				],
 				"responses": {
@@ -77,7 +79,8 @@
 					{
 						"name": "cache",
 						"in": "query",
-						"type": "boolean"
+						"type": "boolean",
+						"default": true
 					}
 				],
 				"responses": {
