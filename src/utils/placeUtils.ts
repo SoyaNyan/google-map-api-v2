@@ -234,8 +234,8 @@ const getPlaceData = async (url: string): Promise<FormattedPlaceDataType | boole
 		}
 
 		// website
-		const websiteElem = document.querySelector('a[data-item-id="authority"] .Io6YTe')
-		const website = websiteElem instanceof HTMLElement ? websiteElem.innerHTML : undefined
+		const websiteElem = document.querySelector('a[data-item-id="authority"]')
+		const website = websiteElem instanceof HTMLAnchorElement ? websiteElem.href : undefined
 
 		// phone
 		const formattedPhoneElem = document.querySelector('button[data-item-id*="phone:"] .Io6YTe')
