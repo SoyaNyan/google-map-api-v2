@@ -28,7 +28,7 @@ const app = express()
 // express setting
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors({ origin: 'http://localhost:7766' }))
+app.use(cors({ origin: 'http://192.168.10.205:7766' }))
 
 // swagger router
 app.use(
