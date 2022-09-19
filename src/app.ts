@@ -1,6 +1,7 @@
 // packages
 import express, { Request, Response } from 'express'
 import { readFileSync } from 'fs'
+import cors from 'cors'
 
 // swagger
 import swaggerUi from 'swagger-ui-express'
@@ -27,6 +28,7 @@ const app = express()
 // express setting
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cors({ origin: 'http://localhost:7766' }))
 
 // swagger router
 app.use(
