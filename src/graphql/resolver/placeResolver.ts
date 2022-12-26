@@ -14,7 +14,12 @@ const placeResolver = {
 		// check url
 		const urlPrefix = 'https://www.google.com/maps/place/'
 		if (!decodedUrl.includes(urlPrefix)) {
-			return {}
+			throw new Error(
+				JSON.stringify({
+					code: 400,
+					message: 'Bad request.',
+				})
+			)
 		}
 
 		// log url
@@ -46,7 +51,12 @@ const placeResolver = {
 			// logger
 			logger.error(`[GraphQL Request] Failed to fetch place data.`)
 
-			return {}
+			throw new Error(
+				JSON.stringify({
+					code: 200,
+					message: 'No match data.',
+				})
+			)
 		}
 
 		// set cache

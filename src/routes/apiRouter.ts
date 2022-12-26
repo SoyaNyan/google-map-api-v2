@@ -47,6 +47,12 @@ router.use(
 	graphqlHTTP({
 		schema: placeSchema,
 		rootValue: placeResolver,
+		customFormatErrorFn: (err) => {
+			const error = JSON.parse(err.message)
+			return {
+				...error,
+			}
+		},
 		graphiql: true,
 	})
 )
