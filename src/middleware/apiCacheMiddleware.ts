@@ -10,7 +10,7 @@ import { getCache } from '../utils/cacheUtils'
 /**
  * check placeid cache
  */
-const checkPlaceIdChace = async (
+const checkPlaceIdCache = async (
 	req: Request,
 	res: Response,
 	next: NextFunction
@@ -65,7 +65,7 @@ const checkPlaceIdChace = async (
 /**
  * check placeinfo cache
  */
-const checkPlaceInfoChace = async (
+const checkPlaceInfoCache = async (
 	req: Request,
 	res: Response,
 	next: NextFunction
@@ -108,7 +108,7 @@ const checkPlaceInfoChace = async (
 /**
  * check placedata cache
  */
-const checkPlaceDataChace = async (
+const checkPlaceDataCache = async (
 	req: Request,
 	res: Response,
 	next: NextFunction
@@ -155,4 +155,4 @@ const checkPlaceDataChace = async (
 	}
 }
 
-export { checkPlaceIdChace, checkPlaceInfoChace, checkPlaceDataChace }
+export { checkPlaceIdCache, checkPlaceInfoCache, checkPlaceDataCache }

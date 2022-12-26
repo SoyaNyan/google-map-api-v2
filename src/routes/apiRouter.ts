@@ -1,11 +1,16 @@
 // packages
 import express, { Router } from 'express'
+import { graphqlHTTP } from 'express-graphql'
+
+// graphql
+import placeSchema from '../graphql/schema/placeSchema'
+import placeResolver from '../graphql/resolver/placeResolver'
 
 // middlewares
 import {
-	checkPlaceIdChace,
-	checkPlaceInfoChace,
-	checkPlaceDataChace,
+	checkPlaceIdCache,
+	checkPlaceInfoCache,
+	checkPlaceDataCache,
 } from '../middleware/apiCacheMiddleware'
 
 // controllers
@@ -22,16 +27,28 @@ const router: Router = express.Router()
 /**
  * get place id from google map url
  */
-router.get('/placeid', checkPlaceIdChace, placeIdController)
+router.get('/placeid', checkPlaceIdCache, placeIdController)
 
 /**
  * get place detail info by placeid
  */
-router.get('/placeinfo', checkPlaceInfoChace, placeInfoController)
+router.get('/placeinfo', checkPlaceInfoCache, placeInfoController)
 
 /**
  * get place data from google map url
  */
-router.get('/placedata', checkPlaceDataChace, placeDataController)
+router.get('/placedata', checkPlaceDataCache, placeDataController)
+
+/**
+ * get place data from google map url with graphql query
+ */
+router.use(
+	'/graphql',
+	graphqlHTTP({
+		schema: placeSchema,
+		rootValue: placeResolver,
+		graphiql: true,
+	})
+)
 
 export default router
